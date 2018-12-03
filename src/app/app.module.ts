@@ -9,6 +9,8 @@ import { CollegueComponentComponent } from './collegue-component/collegue-compon
 import { MatCardModule } from '@angular/material/card';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { ListeCollegueComponent } from './liste-collegue/liste-collegue.component';
+import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 
 
@@ -19,6 +21,8 @@ import { ListeCollegueComponent } from './liste-collegue/liste-collegue.componen
     AvisComponentComponent,
     CollegueComponentComponent,
     ListeCollegueComponent,
+    HistoriqueVotesComponent,
+    AccueilComponent,
   ],
   imports: [
     BrowserModule,
