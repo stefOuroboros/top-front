@@ -9,6 +9,6 @@ import { Collegue } from './models';
 export class AppComponent {
   title = 'top-collegues-front';
   collegueExemple: Collegue = new Collegue('thomas', 10,
-  ['../assets/tomme.jpg',
-    '../assets/giphy.gif']);
+  ['./assets/tomme.jpg',
+    './assets/giphy.gif']);
 }
