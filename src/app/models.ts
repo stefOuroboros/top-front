@@ -3,10 +3,10 @@ export class Collegue {
   score: number;
   photos: string[];
 
-  constructor(nom: string, score: number , photos: string[]) {
+  constructor(nom: string, photos: string[], score = 0) {
     this.nom = nom;
-    this.score = score;
     this.photos = photos;
+    this.score = score;
   }
 
   traiter (avis: Avis) {

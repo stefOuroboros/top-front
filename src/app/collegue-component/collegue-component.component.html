@@ -1,5 +1,5 @@
   <div class="collegue">
-  <mat-carousel autoplay="true" proportion="50" maxWidth="720px" >
+  <mat-carousel mouseWheel="true" timings="250ms ease-in" autoplay="true" autoplayInterval="1000" proportion="50" maxWidth="720px" >
     <mat-carousel-slide *ngFor="let col of collegue.photos"
     [image] ="col" class="carousel">
     </mat-carousel-slide>

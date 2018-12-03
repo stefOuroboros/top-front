@@ -8,6 +8,7 @@ import { AvisComponentComponent } from './avis-component/avis-component.componen
 import { CollegueComponentComponent } from './collegue-component/collegue-component.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { ListeCollegueComponent } from './liste-collegue/liste-collegue.component';
 
 
 
@@ -17,6 +18,7 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     BandeauComponentComponent,
     AvisComponentComponent,
     CollegueComponentComponent,
+    ListeCollegueComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,9 @@ import { Collegue } from './models';
 })
 export class AppComponent {
   title = 'top-collegues-front';
-  collegueExemple: Collegue = new Collegue('thomas', 10,
-  ['./assets/tomme.jpg',
-    './assets/giphy.gif']);
+  collegues: Collegue[] = [new Collegue('thomas', ['./assets/tomme.jpg', './assets/giphy.gif']),
+                           new Collegue('Bob', ['./assets/BobRazowsky.jpg', './assets/bobRazowsky2.jpg']),
+                          new Collegue('Sullyvan', ['./assets/sully.jpg', './assets/sullYoung.jpg'])];
+
+
 }
