@@ -1,3 +1,6 @@
-<div *ngFor="let collegue of tabCollegues">
-  <app-collegue-component [collegue]="collegue"></app-collegue-component>
+<div class="row">
+    <div *ngFor="let collegue of tabCollegues" class="col-5">
+        <app-collegue-component [collegue]="collegue"></app-collegue-component>
+      </div>
 </div>
+

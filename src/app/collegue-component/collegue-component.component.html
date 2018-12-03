@@ -1,10 +1,12 @@
-  <div class="collegue">
-  <mat-carousel mouseWheel="true" timings="250ms ease-in" autoplay="true" autoplayInterval="1000" proportion="50" maxWidth="720px" >
-    <mat-carousel-slide *ngFor="let col of collegue.photos"
-    [image] ="col" class="carousel">
+<mat-card>
+  <mat-carousel mouseWheel="true" timings="250ms ease-in" autoplay="true" autoplayInterval="1000" proportion="50"
+    maxWidth="720px">
+    <mat-carousel-slide *ngFor="let col of collegue.photos" [image]="col" class="carousel">
     </mat-carousel-slide>
   </mat-carousel>
-  <p>{{collegue.nom}}</p>
-  <p>{{collegue.score}}</p>
-  <app-avis-component (change)="collegue.traiter($event)"></app-avis-component>
-</div>
+  <mat-card-title>{{collegue.nom}}</mat-card-title>
+  <mat-card-content>
+    <p>Le score de sympathie de {{collegue.nom}} est actuellement de : {{collegue.score}} points !</p>
+  </mat-card-content>
+  <app-avis-component class="avis" (change)="collegue.traiter($event)"></app-avis-component>
+</mat-card>
