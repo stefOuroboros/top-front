@@ -1,4 +1,10 @@
-<p>{{collegue.nom}}</p>
-<p>{{collegue.score}}</p>
-
-<!-- <app-css-carousel></app-css-carousel> -->
+  <div class="collegue">
+  <mat-carousel autoplay="true" proportion="50" maxWidth="720px" >
+    <mat-carousel-slide *ngFor="let col of collegue.photos"
+    [image] ="col" class="carousel">
+    </mat-carousel-slide>
+  </mat-carousel>
+  <p>{{collegue.nom}}</p>
+  <p>{{collegue.score}}</p>
+  <app-avis-component (change)="collegue.traiter($event)"></app-avis-component>
+</div>

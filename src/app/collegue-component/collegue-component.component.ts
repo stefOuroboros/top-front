@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatCarouselSlide, MatCarouselSlideComponent } from '@ngmodule/material-carousel';
 import { Collegue } from '../models';
 @Component({
   selector: 'app-collegue-component',
@@ -6,7 +7,8 @@ import { Collegue } from '../models';
   styleUrls: ['./collegue-component.component.css']
 })
 export class CollegueComponentComponent implements OnInit {
-  @Input() collegue: Collegue = new Collegue();
+
+  @Input() collegue: Collegue;
 
   ngOnInit() {
   }
