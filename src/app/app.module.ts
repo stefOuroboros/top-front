@@ -11,6 +11,8 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { ListeCollegueComponent } from './liste-collegue/liste-collegue.component';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CollegueService } from './collegue.service';
 
 
 
@@ -30,8 +32,9 @@ import { AccueilComponent } from './accueil/accueil.component';
     MatButtonModule,
     MatCardModule,
     MatCarouselModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [CollegueService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

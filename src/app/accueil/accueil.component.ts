@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Collegue, Vote, Avis } from '../models';
-
+import { CollegueService } from '../collegue.service';
 
 @Component({
   selector: 'app-accueil',
@@ -9,20 +9,12 @@ import { Collegue, Vote, Avis } from '../models';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+ listeCollegues: Collegue[];
 
-  thomas: Collegue;
-  bob: Collegue;
-  sully: Collegue;
-  collegues: Collegue[] = [this.thomas = new Collegue('thomas', ['./assets/tomme.jpg', './assets/giphy.gif']),
-                           this.bob = new Collegue('Bob', ['./assets/BobRazowsky.jpg', './assets/bobRazowsky2.jpg']),
-                          this.sully = new Collegue('Sullyvan', ['./assets/sully.jpg', './assets/sullYoung.jpg'])];
-
-  votes: Vote[] = [new Vote(this.thomas, Avis.AIMER), new Vote(this.sully, Avis.DETESTER),
-                             new Vote(this.sully, Avis.DETESTER), new Vote(this.bob, Avis.AIMER)];
-
+  constructor(private _collegueService: CollegueService) { }
 
   ngOnInit() {
+    this._collegueService.listerCollegues().then(collegue =>  this.listeCollegues = collegue);
   }
 
 }

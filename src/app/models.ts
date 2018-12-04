@@ -1,12 +1,12 @@
 export class Collegue {
-  nom: string;
+  pseudo: string;
   score: number;
-  photos: string[];
+  imageUrl: string[];
   vote: Vote;
 
-  constructor(nom: string, photos: string[], score = 0) {
-    this.nom = nom;
-    this.photos = photos;
+  constructor(pseudo: string, imageUrl: string[], score = 0) {
+    this.pseudo = pseudo;
+    this.imageUrl = imageUrl;
     this.score = score;
   }
 
@@ -33,9 +33,9 @@ export class Vote {
 
   toString() {
     if (this.avis === Avis.AIMER) {
-      return `${this.collegue.nom} est aimé.e, il/elle a désormais un score de ${this.collegue.score}`;
+      return `${this.collegue.pseudo} est aimé.e, il/elle a désormais un score de ${this.collegue.score}`;
     } else {
-      return `${this.collegue.nom} est détesté.e, il/elle a désormais un score de ${this.collegue.score}`;
+      return `${this.collegue.pseudo} est détesté.e, il/elle a désormais un score de ${this.collegue.score}`;
     }
   }
 
