@@ -10,14 +10,6 @@ export class Collegue {
     this.score = score;
   }
 
-  traiter(avis: Avis) {
-    if (avis === Avis.AIMER) {
-      this.score += 1;
-    } else {
-      this.score -= 1;
-    }
-  }
-
 }
 
 export enum Avis { AIMER, DETESTER }

@@ -15,21 +15,15 @@ export class CollegueService {
     return this._http.get(URL_BACKEND + '/collegues').toPromise().then(
       (tabColServeur: any[]) => tabColServeur.map(
         cServeur => new Collegue(
-          cServeur.pseudo, cServeur.imageUrl, cServeur.score)));
+          cServeur.pseudo, cServeur.imageUrl, cServeur.score))).catch();
   }
 
-  // donnerUnAvis(unCollegue: Collegue, avis: Avis): Promise<Collegue> {
-  //   const URL_BACKEND = environment.backendUrl;
-  //   // TODO Aimer ou Détester un collègue côté serveur
-  //   const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-
-  //   return this._http.patch(URL_BACKEND + '/collegues' + unCollegue.pseudo, { action: avis }, httpOptions)
-  //     .toPromise()
-  //     .then((data: Avis) => {
-  //       return undefined;
-  //     }, (error: undefined) => {
-  //       return error;
-  //     }
-  //     );
-  // }
+  donnerUnAvis(unCollegue: Collegue, avis: Avis): Promise<Collegue> {
+    const URL_BACKEND = environment.backendUrl;
+    // TODO Aimer ou Détester un collègue côté serveur
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+    return this._http.patch(URL_BACKEND + '/collegues/' + unCollegue.pseudo, {'action' : avis}, httpOptions).toPromise().then(
+      (cServeur: any) => new Collegue(cServeur.pseudo, cServeur.imageUrl, cServeur.score)
+    );
+  }
 }
