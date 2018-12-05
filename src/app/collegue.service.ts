@@ -15,7 +15,13 @@ export class CollegueService {
     return this._http.get(URL_BACKEND + '/collegues').toPromise().then(
       (tabColServeur: any[]) => tabColServeur.map(
         cServeur => new Collegue(
-          cServeur.pseudo, cServeur.imageUrl, cServeur.score))).catch();
+          cServeur.pseudo, cServeur.imageUrl, cServeur.score)));
+  }
+
+  afficherUnCollegue(unColleguePseudo: string): Promise<Collegue> {
+    const URL_BACKEND = environment.backendUrl;
+    return this._http.get(URL_BACKEND + '/collegues/' + unColleguePseudo).toPromise().then(
+      (c: Collegue) => c);
   }
 
   donnerUnAvis(unCollegue: Collegue, avis: Avis): Promise<Collegue> {
