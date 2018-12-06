@@ -9,8 +9,8 @@ export class Collegue {
   email: string;
   adresse: string;
 
-  constructor(matricule: string, pseudo: string, imageUrl: string[], score = 0, nom = 'non-communiqué',
-  prenom = 'non-communiqué', email = 'non-communiqué', adresse = 'non-communiqué') {
+  constructor(pseudo: string, imageUrl: string[], score = 0, nom = 'non-communiqué',
+  prenom = 'non-communiqué', email = 'non-communiqué', adresse = 'non-communiqué', matricule: string) {
     this.matricule = matricule;
     this.pseudo = pseudo;
     this.imageUrl = imageUrl;
