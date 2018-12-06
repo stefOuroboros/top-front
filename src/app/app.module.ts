@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule} from '@angular/material';
+import { MatListModule, MatInputModule, MatSelectModule, MatRadioModule} from '@angular/material';
+import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BandeauComponentComponent } from './bandeau-component/bandeau-component.component';
@@ -19,14 +20,16 @@ import { AboutComponent } from './about/about.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Add2CollegueComponent } from './add2-collegue/add2-collegue.component';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilComponent},
   { path: 'about', component: AboutComponent },
+  { path: 'ajouter', component: Add2CollegueComponent },
   { path: 'collegues/:pseudo', component: DetailCollegueComponent },
   { path: '',   redirectTo: '/accueil', pathMatch: 'full' }, // redirige vers la route page1 par défaut
-  { path: '**',  component: PagenotfoundComponent } // page non trouvée
+  { path: '**',  component: PagenotfoundComponent }, // page non trouvée
 ];
 
 
@@ -43,6 +46,7 @@ const appRoutes: Routes = [
     AboutComponent,
     DetailCollegueComponent,
     PagenotfoundComponent,
+    Add2CollegueComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,12 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule,
   ],
   providers: [CollegueService],
   bootstrap: [AppComponent]

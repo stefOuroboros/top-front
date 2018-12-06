@@ -32,4 +32,10 @@ export class CollegueService {
       (cServeur: any) => new Collegue(cServeur.pseudo, cServeur.imageUrl, cServeur.score)
     );
   }
+
+  listerLesMatriculesExistant(): Promise<string[]> {
+    const URL_BACKEND = environment.backendUrl;
+    return this._http.get<string[]>(URL_BACKEND + '/collegues/matricules').toPromise();
+  }
+
 }
