@@ -22,6 +22,7 @@ import { DetailCollegueComponent } from './detail-collegue/detail-collegue.compo
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Add2CollegueComponent } from './add2-collegue/add2-collegue.component';
+import { ScorePipe } from './pipes/score.pipe';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AccueilComponent},
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
     DetailCollegueComponent,
     PagenotfoundComponent,
     Add2CollegueComponent,
+    ScorePipe,
   ],
   imports: [
     BrowserModule,

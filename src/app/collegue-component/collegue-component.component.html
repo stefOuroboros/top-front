@@ -5,7 +5,7 @@
       <img [src]="col">
     </mat-carousel-slide>
   </mat-carousel>
-  <mat-card-title><a routerLink="/collegues/{{collegue.pseudo}}">{{collegue.pseudo}}</a></mat-card-title>
+  <mat-card-title><a routerLink="/collegues/{{collegue.pseudo}}">{{collegue.pseudo | uppercase}}</a></mat-card-title>
   <mat-card-content>
     <p>Le score de sympathie de {{collegue.pseudo}} est actuellement de : {{collegue.score}} points !</p>
   </mat-card-content>
