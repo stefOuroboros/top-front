@@ -1,25 +1,22 @@
 export class Collegue {
-  matricule: string;
+
   pseudo: string;
   score: number;
   imageUrl: string[];
   vote: Vote;
-  nom: string;
-  prenom: string;
-  email: string;
-  adresse: string;
 
-  constructor(pseudo: string, imageUrl: string[], score = 0, nom = 'non-communiqué',
-  prenom = 'non-communiqué', email = 'non-communiqué', adresse = 'non-communiqué', matricule: string) {
-    this.matricule = matricule;
+  constructor(pseudo: string, imageUrl: string[], score = 0) {
+
     this.pseudo = pseudo;
     this.imageUrl = imageUrl;
     this.score = score;
-    this.nom  = nom;
-    this.prenom = prenom;
-    this.email = email;
-    this.adresse = adresse;
   }
+}
+
+export class CollegueForm {
+  matricule: string;
+  pseudo: string;
+  imageUrl: string;
 
 }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { CollegueService } from '../collegue.service';
+import { CollegueForm } from '../models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add2-collegue',
@@ -9,10 +10,16 @@ import { CollegueService } from '../collegue.service';
 })
 export class Add2CollegueComponent {
 
+  messageError: string;
   matricules: string[];
-
-  constructor(private fb: FormBuilder, private _collegueService: CollegueService) {
+  collegueForm = new CollegueForm();
+  constructor(private _collegueService: CollegueService, private router: Router) {
     _collegueService.listerLesMatriculesExistant().then(tabMatricules => this.matricules = tabMatricules);
   }
 
+  submit(collegueForm: CollegueForm) {
+    this._collegueService.ajouterUnCollegue(collegueForm).then(() => this.router.navigate(['/accueil'])).catch((error) => {
+      this.messageError = error.error;
+    });
+  }
 }

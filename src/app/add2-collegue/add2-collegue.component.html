@@ -1,12 +1,16 @@
 <mat-card>
-  <form (ngSubmit)="submit()">
-<mat-card-title>
-    <p>Matricules : <p><select name="matricules" id="matricules">
-          <option *ngFor="let matricule of matricules">{{matricule}}</option>
+  <mat-card-title>
+    <h2>{{collegueForm.pseudo}}</h2>
+  </mat-card-title>
+  <form #valid="ngForm" (ngSubmit)="submit(collegueForm)">
+    <p>Matricules : <p><select [(ngModel)]="collegueForm.matricule" #matricule="ngModel" required name="matricule" id="matricule">
+          <option *ngFor="let matricule of matricules" [value]="matricule">{{matricule}}</option>
         </select>
-      </mat-card-title>
-        <p>Pseudo : </p><input type="text">
-        <p>URL Image : </p><input type="text">
-        <button>Envoyer</button>
+<!-- {{pseudo.valid}} -->
+        <label>Pseudo : </label><input name="pseudo" [(ngModel)]="collegueForm.pseudo" #pseudo="ngModel" required minlength="2">
+        <label>URL Image : </label><input name="imageUrl" [(ngModel)]="collegueForm.imageUrl">
+        <button type="submit" [disabled]="!valid.valid">Envoyer</button>
   </form>
+  {{collegueForm | json}}
 </mat-card>
+{{messageError}}

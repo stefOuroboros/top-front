@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Collegue, Avis } from './models';
+import { Collegue, Avis, CollegueForm } from './models';
 import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
@@ -36,6 +36,12 @@ export class CollegueService {
   listerLesMatriculesExistant(): Promise<string[]> {
     const URL_BACKEND = environment.backendUrl;
     return this._http.get<string[]>(URL_BACKEND + '/collegues/matricules').toPromise();
+  }
+
+  ajouterUnCollegue(unCollegue: CollegueForm): Promise<any> {
+    const URL_BACKEND = environment.backendUrl;
+    return this._http.post(URL_BACKEND + '/collegues/nouveau', unCollegue,
+    {headers: new HttpHeaders({ 'Content-Type': 'application/json'}), responseType: 'text' }).toPromise();
   }
 
 }
